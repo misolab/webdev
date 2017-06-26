@@ -1,0 +1,10 @@
+version: '2'
+
+services:
+  was:
+      image: jboss/wildfly:10.0.0.Final
+      ports:
+        - 8080:8080
+        - 9990:9990
+      volumes:
+        - ./_deployments:/opt/jboss/wildfly/standalone/deployments
