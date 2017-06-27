@@ -3,3 +3,13 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://db/joins
+    username: joins
+    password: joins
+
+mybatis:
+  type-aliases-package: com.joins.domain
+  mapper-locations: classpath:mappers/*.xml
+

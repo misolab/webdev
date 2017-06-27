@@ -24,4 +24,4 @@ nbdist/
 .nb-gradle/
 
 ### Docker ###
-docker/_deployments/
+docker/_*

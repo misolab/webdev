@@ -1,5 +1,7 @@
 package com.joins.controllers;
 
+import com.joins.mappers.UserMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/cms")
 public class CMSController {
 
+    @Autowired
+    UserMapper mapper;
+
     @RequestMapping("/main")
-    public void main(Model model){
-        model.addAttribute("msg", "This is CMS Main");
+    public void main(Model model) throws Exception {
+        mapper.insert();
+        model.addAttribute("msg", "This is CMS Main : " + mapper.select());
     }
 }
