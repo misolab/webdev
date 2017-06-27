@@ -1,6 +1,18 @@
 version: '2'
 
 services:
+  web:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - was
+    links:
+      - was
+    volumes:
+      - ./nginx/was.conf:/etc/nginx/conf.d/was.conf:ro
+      - ./_webroot:/usr/share/nginx/html
   was:
       image: jboss/wildfly:10.0.0.Final
       ports:
